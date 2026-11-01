@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emily &amp; James – Ivory Monogram Wedding Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e7;--paper:#efe7d6;--ink:#3b342a;--mute:#857a66;--line:#d6cab0;--accent:#9a8052;--hi:rgba(255,255,255,.95);--lo:rgba(120,100,60,.38);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241f19;--paper:#2d261e;--ink:#eee5d3;--mute:#b3a78f;--line:#4a4033;--accent:#c9ab72;--hi:rgba(255,235,200,.14);--lo:rgba(0,0,0,.6)}}
+:root[data-theme="dark"]{--bg:#241f19;--paper:#2d261e;--ink:#eee5d3;--mute:#b3a78f;--line:#4a4033;--accent:#c9ab72;--hi:rgba(255,235,200,.14);--lo:rgba(0,0,0,.6)}
+*,*:before,*:after{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:90px;height:100%}
+body{background:var(--bg);color:var(--ink);font:300 1.28rem/1.75 var(--serif);min-height:100%}
+a{color:inherit}:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.sans{font-family:var(--sans);font-weight:300;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem}section{padding:6.5rem 0;text-align:center}
+h2{font:italic 300 clamp(2.4rem,6vw,3.6rem)/1.1 var(--serif);margin-bottom:1.2rem}
+.rule{width:1px;height:56px;background:var(--accent);margin:0 auto 2rem}
+/* embossed monogram */
+.mono{display:grid;place-items:center;width:clamp(150px,34vw,210px);aspect-ratio:1;margin:0 auto;border-radius:50%;background:var(--bg);
+box-shadow:inset 4px 4px 9px var(--lo),inset -4px -4px 9px var(--hi),0 0 0 9px var(--bg),0 0 0 10px var(--line)}
+.mono span{font:400 clamp(3.2rem,9vw,4.8rem)/1 var(--serif);color:var(--bg);text-shadow:-1px -1px 1px var(--lo),1px 1px 1px var(--hi);letter-spacing:.04em}
+.mono span i{font-size:.55em;font-style:italic;padding:0 .12em;vertical-align:.18em}
+/* gate */
+#gate{position:fixed;inset:0;z-index:100;background:var(--bg);display:grid;place-items:center;text-align:center;padding:2rem;transition:transform 1.3s cubic-bezier(.7,0,.2,1)}
+#gate.open{transform:translateY(-102%)}#gate.gone{display:none}
+#gate h1{font:italic 300 clamp(2.6rem,8vw,4.4rem)/1.1 var(--serif);margin:2.5rem 0 .6rem}#gate p{color:var(--mute)}
+.btn{display:inline-block;margin-top:2.2rem;padding:1rem 2.4rem;border:1px solid var(--accent);background:none;color:var(--ink);cursor:pointer;text-decoration:none;transition:background .3s,color .3s}
+.btn:hover{background:var(--accent);color:var(--bg)}.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:1rem 1rem;padding-top:calc(1rem + env(safe-area-inset-top,0px))}
+header.top ul{list-style:none;padding:0;display:flex;justify-content:center;gap:.6rem 2rem;flex-wrap:wrap}header.top a{text-decoration:none;color:var(--mute);font-size:.74rem}header.top a:hover{color:var(--ink)}
+#home{padding:5rem 0 6rem}#home .names{font:italic 300 clamp(3.2rem,11vw,6.6rem)/1 var(--serif);margin:2.5rem 0 1rem}
+#home .names small{font-size:.38em;display:block;margin:.35em 0;color:var(--accent)}
+.when{margin:1.6rem 0 .2rem}.where{color:var(--mute)}
+.cd{display:flex;justify-content:center;gap:clamp(1.2rem,5vw,3rem);margin-top:3.2rem;padding-top:2rem;border-top:1px solid var(--line)}
+.cd b{display:block;font:300 clamp(2.4rem,7vw,3.6rem)/1 var(--serif)}.cd span{color:var(--mute);font-size:.7rem}
+/* story */
+#story{background:var(--paper)}#story p{max-width:36rem;margin:0 auto 1.4rem}#story p:first-of-type:first-letter{float:left;font:400 4.2rem/.8 var(--serif);padding:.3rem .6rem 0 0;color:var(--accent)}
+#story p:first-of-type{text-align:left}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.8rem 0}
+.facts b{display:block;font:italic 400 2rem var(--serif);color:var(--accent)}.facts span{font-size:1.05rem;color:var(--mute)}
+@media(max-width:600px){.facts{grid-template-columns:1fr}}
+/* schedule */
+.sched{list-style:none;padding:0;max-width:560px;margin:2.5rem auto 0;text-align:left}
+.sched li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.5rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.sched time{font:400 .78rem var(--sans);letter-spacing:.16em;color:var(--accent);padding-top:.55rem}.sched h3{font:400 1.6rem/1.2 var(--serif)}.sched p{color:var(--mute);font-size:1.05rem;line-height:1.5}
+@media(max-width:520px){.sched li{grid-template-columns:1fr;gap:.2rem}}
+.venue{margin-top:3rem;padding:2.4rem 1.5rem;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:7px}
+.venue h3{font:italic 400 2rem var(--serif)}.venue p{color:var(--mute)}
+#stay{background:var(--paper)}.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem;text-align:left;margin-top:2.5rem}
+.two h3{font:italic 400 1.8rem var(--serif);margin-bottom:.3rem}.two p{color:var(--mute);font-size:1.1rem;line-height:1.55}.two .sans{display:block;margin-top:.6rem;color:var(--accent);font-size:.72rem}
+@media(max-width:700px){.two{grid-template-columns:1fr;gap:2rem}}
+/* rsvp */
+form{max-width:520px;margin:2.5rem auto 0;display:grid;gap:1.6rem;text-align:left}
+label{display:grid;gap:.2rem;font:400 .74rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+input,select,textarea{font:300 1.3rem var(--serif);letter-spacing:0;text-transform:none;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--line);padding:.4rem 0;width:100%;border-radius:0}
+select option{background:var(--bg);color:var(--ink)}input:focus,select:focus,textarea:focus{outline:0;border-color:var(--accent)}
+input[aria-invalid=true]{border-color:#b3261e}.err{font:300 .9rem var(--serif);letter-spacing:0;text-transform:none;color:#b3261e;min-height:1.1em}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}@media(max-width:520px){.row{grid-template-columns:1fr}}
+#ok{display:none;max-width:520px;margin:2.5rem auto 0;padding:2.5rem 1.5rem;border:1px solid var(--line)}#ok h3{font:italic 300 2.4rem var(--serif);color:var(--accent)}
+.demo{font-size:1rem;color:var(--mute);margin-top:2rem;font-style:italic}
+details{max-width:660px;margin:0 auto;border-bottom:1px solid var(--line);text-align:left;padding:1.1rem 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;font:400 1.5rem var(--serif)}summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--accent);transition:transform .3s}details[open] summary:after{transform:rotate(45deg)}details p{color:var(--mute);padding-top:.6rem}
+footer{padding:5rem 1.5rem 3rem;text-align:center;border-top:1px solid var(--line);padding-bottom:calc(3rem + env(safe-area-inset-bottom,0px))}
+footer .mono{width:110px;margin-bottom:2rem}footer .mono span{font-size:2.2rem}footer p{color:var(--mute)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#e8dcc4,#cdb994 60%,#9a8052)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ph.bad img{display:none}
+#home{position:relative;overflow:hidden;color:#fff;padding:7rem 0}
+.herobg{position:absolute;inset:0;z-index:0}.herobg:after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(30,22,12,.45),rgba(30,22,12,.62))}
+#home .wrap{position:relative;z-index:1}#home .names small{color:#ecd9ab}#home .when{color:#f6ecd4}#home .where{color:rgba(255,255,255,.85)}
+#home .cd{border-color:rgba(255,255,255,.35)}#home .cd span{color:rgba(255,255,255,.8)}#home .btn.solid{background:var(--bg);color:var(--ink);border-color:var(--bg);margin-top:2.4rem}
+.arch{width:min(340px,80%);aspect-ratio:3/4;margin:0 auto 3rem;border-radius:999px 999px 0 0;outline:1px solid var(--line);outline-offset:10px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}.strip .ph{aspect-ratio:3/4}
+@media(max-width:600px){.strip{grid-template-columns:1fr 1fr}.strip .ph:nth-child(3){display:none}}
+
+/* editor */
+#ed{display:none;position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:300;font:14px/1.4 system-ui,sans-serif;color:#222;text-align:right}
+#ed *{font-family:system-ui,sans-serif;letter-spacing:0;text-transform:none}
+#edP{display:none;width:min(340px,calc(100vw - 28px));max-height:72vh;overflow:auto;margin-bottom:10px;padding:14px;background:#fff;border:1px solid #cfc6b0;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.25);text-align:left}
+#ed label{display:block;margin:8px 0 0;font:600 11px system-ui,sans-serif;color:#555}
+#ed input{display:block;width:100%;margin-top:3px;padding:7px;font:14px system-ui,sans-serif;color:#222;background:#fff;border:1px solid #ccc;border-radius:6px}
+.edb{margin:8px 6px 0 0;padding:8px 12px;font:600 13px system-ui,sans-serif;color:#222;background:#f1ece0;border:1px solid #cfc6b0;border-radius:8px;cursor:pointer}
+.edb.dark{color:#fff;background:#3b342a;border-color:#3b342a}
+.edh{margin:4px 0 6px;color:#555;font-size:12.5px}
+.editing .ph{cursor:pointer;outline:2px dashed rgba(154,128,82,.85);outline-offset:-4px}
+
+/* text editing */
+.editing [contenteditable=true]{outline:1px dashed rgba(154,128,82,.75);outline-offset:3px;cursor:text}
+.editing [contenteditable=true]:focus{outline:2px solid #9a8052;background:rgba(154,128,82,.16)}
+.editing .sched li,.editing details,.editing .two>div{position:relative}
+.rm{position:absolute;top:4px;right:0;z-index:5;width:26px;height:26px;padding:0;border:0;border-radius:50%;background:#3b342a;color:#fff;font:700 16px/26px system-ui,sans-serif;cursor:pointer;opacity:.9}
+.rm:hover{background:#b3261e}
+#ed label small{font-weight:400;color:#777}
+</style></head><body class="">
+
+<div id="gate" role="dialog" aria-label="Invitation" class="">
+<div><div class="mono"><span>E<i>&amp;</i>J</span></div>
+<h1>Emily &amp; James</h1><p>request the pleasure of your company</p>
+<button class="btn sans" id="openBtn">Open invitation</button></div></div>
+
+<header class="top"><ul class="sans"><li><a href="#home">Home</a></li><li><a href="#story">Our story</a></li><li><a href="#details">Details</a></li><li><a href="#stay">Travel</a></li><li><a href="#rsvp">RSVP</a></li><li><a href="#faq">FAQ</a></li></ul></header>
+
+<main>
+<section id="home"><div class="herobg ph" id="heroImg" role="img" aria-label="Emily and James in a golden-hour garden"><img alt="" decoding="async" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=2000&amp;q=80"></div><div class="wrap">
+<div class="mono"><span>E<i>&amp;</i>J</span></div>
+<h1 class="names">Emily<small>and</small>James</h1>
+<p class="sans when">Sunday, 24 October 2027</p>
+<p class="where">Willowbrook Estate, England (sample venue)</p>
+<div class="cd" role="timer"><div><b id="d">361</b><span class="sans">Days</span></div><div><b id="h">19</b><span class="sans">Hours</span></div><div><b id="m">16</b><span class="sans">Minutes</span></div><div><b id="s">02</b><span class="sans">Seconds</span></div></div>
+<a class="btn solid sans" href="#rsvp">Reply by 1 August</a></div></section>
+
+<section id="story"><div class="wrap"><div class="rule"></div><h2>Our story</h2>
+<div class="arch ph" id="storyImg" role="img" aria-label="Emily and James laughing together"><img alt="" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=900&amp;q=80"></div>
+<p>We met on a rainy Tuesday in a bookshop, both reaching for the last copy of the same novel. He let her have it. She gave it back a week later with a note in the margin, and neither of us has stopped writing to the other since.</p>
+<p>Seven years, two apartments and one very opinionated dog later, we are ready to make it official. We would be honoured to have you beside us.</p>
+<div class="facts"><div><b>2020</b><span>We met</span></div><div><b>2024</b><span>We got engaged</span></div><div><b>2027</b><span>We marry</span></div></div>
+<div class="strip"><div class="ph" data-i="photo-1522673607200-164d1b6ce486" role="img" aria-label="A quiet moment together"><img alt="" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&amp;fit=crop&amp;w=700&amp;q=80"></div><div class="ph" data-i="photo-1465495976277-4387d4b0b4c6" role="img" aria-label="Walking through the garden"><img alt="" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&amp;fit=crop&amp;w=700&amp;q=80"></div><div class="ph" data-i="photo-1537633552985-df8429e8048b" role="img" aria-label="Bridal bouquet"><img alt="" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&amp;fit=crop&amp;w=700&amp;q=80"></div></div></div></section>
+
+<section id="details"><div class="wrap"><div class="rule"></div><h2>The day</h2><p class="where">Sunday, 24 October 2027. All details below are sample data.</p>
+<ol class="sched">
+<li><time>3:30 PM</time><div><h3>Guests arrive</h3><p>Please be seated by 3:50 PM. Shuttles run from both hotels.</p></div></li>
+<li><time>4:00 PM</time><div><h3>Ceremony</h3><p>St. Aurelia Chapel, followed by a short walk through the gardens.</p></div></li>
+<li><time>5:00 PM</time><div><h3>Cocktail hour</h3><p>Champagne and canapés on the terrace.</p></div></li>
+<li><time>6:30 PM</time><div><h3>Dinner</h3><p>A seated dinner in the Orangery, with toasts.</p></div></li>
+<li><time>9:00 PM</time><div><h3>Dancing</h3><p>Music until midnight, then a candlelit send-off.</p></div></li></ol>
+<div class="venue"><h3>Willowbrook Estate</h3><p>1 Chapel Road, Willowbrook (sample address)</p><p><i>Dress code: black tie optional. The ceremony is on grass, so choose block heels.</i></p>
+<a class="btn sans" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Willowbrook%20Estate">Open in Google Maps</a></div></div></section>
+
+<section id="stay"><div class="wrap"><div class="rule"></div><h2>Travel &amp; stay</h2>
+<div class="two"><div><h3>The Rosewood Manor</h3><p>Our host hotel, five minutes from the chapel. Quote “Emily &amp; James” for a guest rate.</p><span class="sans">From $220 a night</span></div>
+<div><h3>Hotel Aurelia</h3><p>A boutique stay in the old town with a rooftop terrace and a quiet breakfast room.</p><span class="sans">From $170 a night</span></div>
+<div><h3>Getting there</h3><p>The estate is 40 minutes from the airport by car. Free parking is on site.</p></div>
+<div><h3>Gifts</h3><p>Your presence is the gift. If you wish to give something, our registry is linked below.</p><a class="sans" id="reg" href="#">View registry (sample link)</a></div></div></div></section>
+
+<section id="rsvp"><div class="wrap"><div class="rule"></div><h2>Kindly reply</h2><p class="where">Please respond by 1 August 2027.</p>
+<form id="rf" novalidate="">
+<label>Full name<input name="name" autocomplete="name" required=""><span class="err"></span></label>
+<label>Email<input name="email" type="email" autocomplete="email" required=""><span class="err"></span></label>
+<div class="row"><label>Guests<input name="guests" type="number" min="1" max="6" value="1" required=""><span class="err"></span></label>
+<label>Will you attend?<select name="att" required=""><option value="">Select</option><option>Joyfully accepts</option><option>Regretfully declines</option></select><span class="err"></span></label></div>
+<div class="row"><label>Meal<select name="meal"><option>Beef tenderloin</option><option>Seared salmon</option><option>Mushroom risotto (vegetarian)</option></select></label>
+<label>Dietary needs<input name="diet" placeholder="Allergies, vegan, halal"></label></div>
+<label>A note for us (optional)<textarea name="msg" rows="2"></textarea></label>
+<button class="btn solid sans" type="submit" style="justify-self:center">Send reply</button></form>
+<div id="ok" role="status" tabindex="-1"><h3>Thank you</h3><p id="okt"></p></div>
+<p class="demo">This form is a demo and does not save responses. Connect a backend in the submitRSVP() function.</p></div></section>
+
+<section id="faq" style="background:var(--paper)"><div class="wrap"><div class="rule"></div><h2>Good to know</h2>
+<details><summary>What should I wear?</summary><p>Black tie optional: floor-length gowns, dark suits. Soft ivory and white are reserved for the bride.</p></details>
+<details><summary>Can I bring a plus-one?</summary><p>Your invitation lists everyone invited. If it includes a guest, add their name in the RSVP.</p></details>
+<details><summary>Are children welcome?</summary><p>We adore them, but the day is adults-only. We can recommend local sitters.</p></details>
+<details><summary>Is there parking?</summary><p>Yes, free at the estate, plus a shuttle from both partner hotels.</p></details>
+<details><summary>Is the ceremony outdoors?</summary><p>Yes, weather permitting. A covered chapel is our backup.</p></details></div></section>
+</main>
+
+<footer><div class="mono"><span>E<i>&amp;</i>J</span></div><p class="sans">Emily &amp; James, 24 October 2027</p><p style="margin-top:1rem;font-style:italic">With love, and with thanks for being part of our story.</p></footer>
+
+<script type="application/json" id="cfg">{"n1":"Emily","n2":"James","date":"2027-10-24T16:00","venue":"Willowbrook Estate","reg":"","rsvp":""}</script>
+<div id="ed"><div id="edP"><b>Edit your website</b>
+<div class="edh">1) Click any text on the page and type. 2) Click a photo, or use the buttons below, to replace it. 3) Press <b>Save my website</b>.</div>
+<div class="edh" style="margin-top:12px"><b>Couple &amp; event</b></div>
+<label>Name 1<input id="f_n1"></label>
+<label>Name 2<input id="f_n2"></label>
+<label>Wedding date &amp; time <small>(updates countdown)</small><input id="f_date" type="datetime-local"></label>
+<label>Venue name <small>(Google Maps button)</small><input id="f_venue"></label>
+<label>Registry link <small>(optional)</small><input id="f_reg" type="url" placeholder="https://..."></label>
+<label>RSVP form link <small>(optional, e.g. Formspree)</small><input id="f_rsvp" type="url" placeholder="https://formspree.io/f/xxxx"></label>
+<div class="edh" style="margin-top:12px"><b>Photos</b></div><div id="edPh"></div>
+<div class="edh" style="margin-top:12px"><b>Add</b> <span>(use the × on an item to remove it)</span></div>
+<button class="edb" id="addSched">+ Schedule item</button><button class="edb" id="addFaq">+ FAQ</button><button class="edb" id="addTravel">+ Travel box</button>
+<div style="margin-top:6px"><button class="edb dark" id="edS">Save my website</button><button class="edb" id="edX">Close</button></div></div>
+<button class="edb dark" id="edT" style="margin:0">Edit website</button></div>
+<input type="file" id="edF" accept="image/*" hidden="">
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const CFG=JSON.parse($("#cfg").textContent);
+const gate=$("#gate");
+function openGate(){gate.classList.add("open");setTimeout(()=>gate.classList.add("gone"),1400);document.body.style.overflow=""}
+document.body.style.overflow="hidden";$("#openBtn").onclick=openGate;$("#openBtn").focus();
+let T=new Date(CFG.date);
+function tick(){const t=Math.max(0,T-new Date()),v={d:Math.floor(t/864e5),h:Math.floor(t/36e5)%24,m:Math.floor(t/6e4)%60,s:Math.floor(t/1e3)%60};for(const k in v)$("#"+k).textContent=String(v[k]).padStart(2,"0")}
+tick();setInterval(tick,1000);
+async function submitRSVP(d){if(!CFG.rsvp)return new Promise(r=>setTimeout(r,400));try{const r=await fetch(CFG.rsvp,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)});if(!r.ok)throw 0}catch(x){alert("Sorry, your reply could not be sent. Please try again.");return false}}
+$("#rf").onsubmit=async e=>{e.preventDefault();const f=e.target;let bad=false;
+$$("[required]",f).forEach(x=>{const m=x.nextElementSibling;let msg="";
+if(!x.value.trim())msg="Please fill in this field.";
+else if(x.type==="email"&&!/^\S+@\S+\.\S+$/.test(x.value))msg="Enter a valid email address.";
+else if(x.type==="number"&&(+x.value<1||+x.value>6))msg="Choose between 1 and 6 guests.";
+m.textContent=msg;x.setAttribute("aria-invalid",String(!!msg));if(msg&&!bad){bad=true;x.focus()}});
+if(bad)return;const d=Object.fromEntries(new FormData(f));if(await submitRSVP(d)===false)return;
+$("#okt").textContent=d.att.startsWith("Joy")?`Thank you, ${d.name}. We can’t wait to celebrate with you.`:`Thank you, ${d.name}. We’ll miss you and appreciate you letting us know.`;
+f.style.display="none";const o=$("#ok");o.style.display="block";o.focus()};
+
+const U=(id,w)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+function pic(el,id,w,eager){if($("img",el))return;const i=new Image();i.alt="";i.decoding="async";if(!eager)i.loading="lazy";i.onerror=()=>el.classList.add("bad");i.src=U(id,w);el.append(i)}
+pic($("#heroImg"),"photo-1519741497674-611481863552",2000,true);
+pic($("#storyImg"),"photo-1511285560929-80b456fea0bc",900);
+$$(".strip .ph").forEach(e=>pic(e,e.dataset.i,700));
+
+/* ===== EDITOR: appears only when opened from your computer (or with #edit). Guests on the web never see it. ===== */
+const ED=$("#ed");let editing=false,cur=null;
+if(location.protocol==="file:"||location.hash==="#edit")ED.style.display="block";
+function links(){const g=$(".venue .btn");g.href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(CFG.venue);const r=$("#reg");
+if(CFG.reg){r.href=CFG.reg;r.target="_blank";r.rel="noopener";r.onclick=null}else{r.href="#";r.onclick=e=>e.preventDefault()}$(".demo").style.display=CFG.rsvp?"none":""}
+function setEdit(on){editing=on;document.body.classList.toggle("editing",on);if(on&&!gate.classList.contains("gone"))openGate();
+$("#edP").style.display=on?"block":"none"}
+function pick(el){cur=el;$("#edF").click()}
+$("#edF").onchange=e=>{const f=e.target.files[0];e.target.value="";if(!f||!cur)return;const el=cur,r=new FileReader();
+r.onload=()=>{const im=new Image();im.onload=()=>{const m=el.id==="heroImg"?1800:1100,k=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+let i=$("img",el);if(!i){i=new Image();i.alt="";el.append(i)}i.removeAttribute("loading");i.src=c.toDataURL("image/jpeg",.85);el.classList.remove("bad")};im.src=r.result};r.readAsDataURL(f)};
+[["Cover photo","#heroImg"],["Our story photo","#storyImg"],["Gallery photo 1",".strip .ph:nth-child(1)"],["Gallery photo 2",".strip .ph:nth-child(2)"],["Gallery photo 3",".strip .ph:nth-child(3)"]].forEach(([t,s])=>{const b=document.createElement("button");b.className="edb";b.textContent=t;b.onclick=()=>pick($(s));$("#edPh").append(b)});
+links();
+$("#edT").onclick=()=>setEdit(true);$("#edX").onclick=()=>setEdit(false);
+function save(){const was=editing;if(was)setEdit(false);const c=document.documentElement.cloneNode(true),b=c.querySelector("body");
+c.querySelector("#ed").removeAttribute("style");c.querySelector("#edP").removeAttribute("style");b.removeAttribute("style");b.className="";c.querySelector("#gate").className="";
+const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["<!DOCTYPE html>\n"+c.outerHTML],{type:"text/html"}));a.download="index.html";a.click();if(was)setEdit(true)}
+$("#edS").onclick=save;
+/* if a photo cannot load (offline / blocked), show the soft gradient instead of a broken-image icon */
+$$(".ph img").forEach(i=>{const bad=()=>i.parentElement.classList.add("bad");i.addEventListener("error",bad);if(i.complete&&i.naturalWidth===0)bad()});
+document.addEventListener("click",e=>{if(!editing||e.target.closest("#ed"))return;if(e.target.closest("a,summary"))e.preventDefault();const p=e.target.closest(".ph");if(p)pick(p)},true);
+</script>
+<script>
+/* ===== TEXT + DETAILS EDITING (added) ===== */
+const EDITABLE='header.top a,#gate h1,#gate p,main h2,main h3,main p,main time,.facts b,.facts span,.cd span,main a.btn,.two .sans,footer p,summary .st';
+let dirty=false;
+function fmtDate(d){const W=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],M=["January","February","March","April","May","June","July","August","September","October","November","December"];
+return{w:W[d.getDay()],d:d.getDate(),m:M[d.getMonth()],y:d.getFullYear()}}
+function applyCfg(){
+ const n1=(CFG.n1||"").trim(),n2=(CFG.n2||"").trim(),nm=$(".names");
+ if(nm&&nm.firstChild&&nm.lastChild){nm.firstChild.textContent=n1;nm.lastChild.textContent=n2}
+ $("#gate h1").textContent=n1+" & "+n2;
+ $$(".mono span").forEach(x=>{if(x.firstChild)x.firstChild.textContent=(n1[0]||"").toUpperCase();if(x.lastChild)x.lastChild.textContent=(n2[0]||"").toUpperCase()});
+ document.title=n1+" & "+n2+" – Wedding Website";
+ const d=new Date(CFG.date);
+ if(!isNaN(d)){T=d;tick();const f=fmtDate(d);$(".when").textContent=f.w+", "+f.d+" "+f.m+" "+f.y;$("footer p.sans").textContent=n1+" & "+n2+", "+f.d+" "+f.m+" "+f.y}
+ if(CFG.venue){const v=$(".venue h3");if(v)v.textContent=CFG.venue}
+ links();
+}
+const FIELDS={f_n1:"n1",f_n2:"n2",f_date:"date",f_venue:"venue",f_reg:"reg",f_rsvp:"rsvp"};
+for(const id in FIELDS)$("#"+id).addEventListener("input",e=>{CFG[FIELDS[id]]=e.target.value;dirty=true;applyCfg()});
+function fillFields(){for(const id in FIELDS)$("#"+id).value=CFG[FIELDS[id]]||""}
+
+function prepSummaries(){$$("summary").forEach(s=>{if(!s.querySelector(".st")){const sp=document.createElement("span");sp.className="st";sp.textContent=s.textContent.trim();s.textContent="";s.append(sp)}})}
+function addRemove(){
+ $$(".sched li,#faq details,.two>div").forEach(it=>{if(it.querySelector(":scope>.rm"))return;const b=document.createElement("button");b.type="button";b.className="rm";b.contentEditable="false";b.title="Remove";b.textContent="×";
+ b.onclick=ev=>{ev.preventDefault();ev.stopPropagation();it.remove();dirty=true};it.append(b)})}
+function stripRemove(){$$(".rm").forEach(b=>b.remove())}
+function markEditable(on){$$(EDITABLE).forEach(el=>{if(on)el.setAttribute("contenteditable","true");else el.removeAttribute("contenteditable")})}
+
+function setEdit(on){
+ editing=on;document.body.classList.toggle("editing",on);
+ if(on){if(!gate.classList.contains("gone"))openGate();prepSummaries();fillFields();$$("#faq details").forEach(d=>d.open=true)}
+ $("#edP").style.display=on?"block":"none";
+ markEditable(on);if(on)addRemove();else{stripRemove();$$("#faq details").forEach(d=>d.open=false)}
+}
+function cloneLast(sel,parent,reset){const last=$$(sel,parent).pop();if(!last)return;const n=last.cloneNode(true);n.querySelectorAll(".rm").forEach(x=>x.remove());reset(n);parent.append(n);markEditable(true);addRemove();dirty=true;n.scrollIntoView({block:"center",behavior:"smooth"})}
+$("#addSched").onclick=()=>cloneLast("li",$(".sched"),n=>{n.querySelector("time").textContent="8:00 PM";n.querySelector("h3").textContent="New event";n.querySelector("p").textContent="Describe this part of the day."});
+$("#addFaq").onclick=()=>cloneLast("details",$("#faq .wrap"),n=>{n.open=true;n.querySelector(".st").textContent="New question?";n.querySelector("p").textContent="Write your answer here."});
+$("#addTravel").onclick=()=>{const first=$(".two>div");const n=first.cloneNode(true);n.querySelectorAll(".rm,[id]").forEach(x=>x.id?x.removeAttribute("id"):x.remove());n.querySelector("h3").textContent="New place";n.querySelector("p").textContent="Add the details here.";const sp=n.querySelector(".sans");if(sp)sp.textContent="Price or note";$(".two").append(n);markEditable(true);addRemove();dirty=true;n.scrollIntoView({block:"center",behavior:"smooth"})};
+
+/* plain-text paste, single-line typing */
+document.addEventListener("paste",e=>{const t=e.target.closest&&e.target.closest("[contenteditable=true]");if(!t)return;e.preventDefault();document.execCommand("insertText",false,(e.clipboardData||window.clipboardData).getData("text/plain").replace(/\s*\n\s*/g," "))});
+document.addEventListener("keydown",e=>{const t=e.target.closest&&e.target.closest("[contenteditable=true]");if(t&&e.key==="Enter")e.preventDefault()});
+document.addEventListener("input",e=>{if(e.target.closest&&e.target.closest("[contenteditable=true]"))dirty=true});
+$("#edF").addEventListener("change",()=>{dirty=true});
+window.addEventListener("beforeunload",e=>{if(dirty&&editing){e.preventDefault();e.returnValue=""}});
+
+/* save: whole website incl. your text, photos and settings -> index.html */
+function save(){
+ const was=editing;if(was)setEdit(false);
+ $("#cfg").textContent=JSON.stringify(CFG);
+ const c=document.documentElement.cloneNode(true),b=c.querySelector("body");
+ c.querySelector("#ed").removeAttribute("style");c.querySelector("#edP").removeAttribute("style");
+ b.removeAttribute("style");b.className="";c.querySelector("#gate").className="";
+ c.querySelectorAll("[contenteditable]").forEach(x=>x.removeAttribute("contenteditable"));
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["<!DOCTYPE html>\n"+c.outerHTML],{type:"text/html"}));a.download="index.html";a.click();
+ dirty=false;if(was)setEdit(true);
+}
+$("#edS").onclick=save;
+</script>
+</body></html>
